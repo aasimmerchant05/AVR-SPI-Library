@@ -193,3 +193,22 @@ unsigned char spi_transceiver(unsigned char data)
 }
 
 #endif
+
+/*
+/////////////////////EXAMPLE
+#include <avr/io.h>
+#include <avr/interrupt.h>
+#include <util/delay.h>
+
+int main(void)
+{
+	//Prescalar set to 8, SPI interrupt is disabled, SPI mode is set to 1(CPOL = 0, CPHA = 1)
+	spi_init_master(8,0,1);
+	while(1)
+	{
+		spi_transceiver(0xAB);
+		_delay_ms(100);
+	}
+}
+
+*/
